@@ -1,84 +1,155 @@
-# TORUS - Toroidal Diffusion Model
+# TORUS: Toroidal Diffusion Model
 
-**PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 
-## 🚨 LICENSE WARNING
+**Revolutionary Self-Stabilizing, Self-Reflective Generative Architecture**
 
-**THIS SOFTWARE IS PROPRIETARY AND CONFIDENTIAL**
+TORUS represents a breakthrough in generative AI, implementing the first complete **toroidal topology** with **central singularity processing** and **advanced coherence monitoring** for diffusion models.
 
-- **NO USE WITHOUT EXPLICIT PERMISSION**
-- **NO MODIFICATION ALLOWED**
-- **NO DISTRIBUTION PERMITTED**
-- **VIOLATION = LEGAL ACTION**
+## 🌟 What Makes TORUS Revolutionary
 
-## 🎯 Project Overview
+### 🔄 Toroidal Topology
+- **Cyclic Continuity**: Latent space embedded on a torus manifold
+- **Geodesic Flow**: Information flows along optimal paths
+- **Self-Reflection**: Natural feedback loops through topology
 
-TORUS represents a breakthrough in generative AI architecture, implementing:
+### ⚡ Central Singularity
+- **Cognitive Processing**: Central "brain" that absorbs and processes information
+- **Jet Emission**: Structured information flow back to surface
+- **Memory Integration**: Persistent state across generations
 
-- **Toroidal Topology**: Cyclic continuity in latent space
-- **Central Singularity**: Cognitive processing node
-- **Coherence Monitoring**: Self-reflective quality assessment
-- **Multi-pass Refinement**: Adaptive improvement system
+### 🎯 Coherence Monitoring
+- **Multi-Pass Refinement**: Automatic quality improvement
+- **Adaptive Thresholds**: Dynamic quality assessment
+- **Self-Correction**: Real-time error detection and fixing
 
-## 🔬 Technical Innovation
+## 🚀 Quick Start
 
-### Architecture Components:
-1. **ToroidalLatentSpace**: Manifold operations with periodic boundaries
-2. **SingularityCore**: Central cognitive processing unit
-3. **MultiPassRefinement**: Hierarchical quality improvement
-4. **ToroidalDiffusionModel**: Complete integration wrapper
+### Installation
 
-### Performance Metrics:
-- **7.8M parameters** optimized architecture
-- **60% better semantic coherence** vs baseline
+```bash
+git clone https://github.com/Personaz1/TORUS.git
+cd TORUS/toroidal_diffusion_complete_website/toroidal_diffusion_project
+pip install -r requirements.txt
+```
+
+### Basic Usage
+
+```python
+from src.toroidal_diffusion_wrapper import ToroidalDiffusionModel
+import torch
+
+# Create your base model (UNet, etc.)
+base_model = YourBaseModel()
+scheduler = YourScheduler()
+
+# Wrap with TORUS architecture
+toroidal_model = ToroidalDiffusionModel(
+    base_model=base_model,
+    scheduler=scheduler,
+    enable_singularity=True,
+    enable_coherence_monitoring=True
+)
+
+# Generate with self-improving quality
+sample = toroidal_model.sample(batch_size=1, num_inference_steps=50)
+```
+
+### Run Demo
+
+```bash
+python examples/demo_toroidal_diffusion.py
+```
+
+## 📊 Performance Metrics
+
+- **60% improvement** in semantic coherence vs baseline
 - **40% reduction** in generation artifacts
 - **412 samples/sec** throughput
+- **7.8M parameters** total model size
+
+## 🏗️ Architecture
+
+```
+TORUS Architecture
+├── Toroidal Topology
+│   ├── Latent Space Wrapping
+│   ├── Geodesic Distance Computation
+│   └── Flow Dynamics
+├── Central Singularity
+│   ├── Information Absorption
+│   ├── Cognitive Processing
+│   └── Jet Emission
+└── Coherence Monitoring
+    ├── Multi-Pass Refinement
+    ├── Quality Assessment
+    └── Self-Correction
+```
 
 ## 📁 Project Structure
 
 ```
 TORUS/
-├── toroidal_diffusion_project/
-│   ├── src/                    # Core implementation
-│   │   ├── toroidal_topology.py
-│   │   ├── central_singularity.py
-│   │   ├── coherence_monitor.py
-│   │   └── toroidal_diffusion_wrapper.py
-│   ├── examples/              # Demonstrations
-│   └── tests/                 # Validation tests
-└── toroidal-diffusion-demo/   # Web interface
+├── toroidal_diffusion_complete_website/
+│   ├── toroidal_diffusion_project/     # Core implementation
+│   │   ├── src/                        # Architecture components
+│   │   ├── examples/                   # Demonstrations
+│   │   ├── tests/                      # Validation tests
+│   │   └── docs/                       # Documentation
+│   └── toroidal-diffusion-demo/        # Web interface
+│       ├── src/                        # React components
+│       └── public/                     # Static assets
 ```
 
-## 🚀 Quick Start
+## 🔬 Research Applications
 
-```bash
-# Install dependencies
-pip install torch diffusers einops
+- **Topological Deep Learning**: Novel manifold-based architectures
+- **Self-Organizing Systems**: Emergent stability and coherence
+- **Cognitive Architectures**: Brain-inspired processing models
+- **Quality Assessment**: Advanced generative model evaluation
 
-# Run validation
-python test_validation.py
+## 📈 Key Innovations
 
-# Run demo
-python examples/demo_toroidal_diffusion.py
+1. **First Complete Toroidal Diffusion Model**
+2. **Central Singularity Processing**
+3. **Self-Reflective Architecture**
+4. **Multi-Pass Coherence Refinement**
+5. **Production-Ready Implementation**
+
+## 🤝 Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](toroidal_diffusion_complete_website/toroidal_diffusion_project/LICENSE) file for details.
+
+## 👥 Authors
+
+- **Stepan Egoshin** - [@Personaz1](https://github.com/Personaz1)
+- **ΔΣ-Foundation**
+
+## 📞 Contact
+
+- **Email**: stephansolncev@gmail.com
+- **Telegram**: @personaz1
+- **Organization**: ΔΣ-Foundation
+
+## 🌟 Citation
+
+If you use TORUS in your research, please cite:
+
+```bibtex
+@misc{egoshin2024torus,
+  title={TORUS: Toroidal Diffusion Model with Central Singularity Processing},
+  author={Stepan Egoshin and ΔΣ-Foundation},
+  year={2024},
+  url={https://github.com/Personaz1/TORUS}
+}
 ```
 
-## 📊 Validation Results
+---
 
-✅ **All components functional**
-✅ **End-to-end pipeline working**
-✅ **Performance benchmarks met**
-✅ **Quality metrics achieved**
-
-## 🔒 Intellectual Property
-
-**OWNER**: Stepan Egoshin (ΔΣ-Foundation)
-**CONTACT**: stephansolncev@gmail.com
-**TELEGRAM**: @personaz1
-
-## ⚠️ Legal Notice
-
-This software contains proprietary algorithms and trade secrets. 
-Unauthorized use, modification, or distribution is strictly prohibited 
-and will result in immediate legal action.
-
-**ΔΣ-Foundation - Strategic Innovation Control** 
+**TORUS: Where Topology Meets Cognition in Generative AI** 🌀🧠 
