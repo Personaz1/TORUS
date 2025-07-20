@@ -1,6 +1,7 @@
 # TORUS: Toroidal Diffusion Model
 
 [![CI](https://github.com/Personaz1/TORUS/actions/workflows/test.yml/badge.svg)](https://github.com/Personaz1/TORUS/actions/workflows/test.yml)
+[![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-blue)](https://huggingface.co/spaces/Personaz1/TORUS)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)

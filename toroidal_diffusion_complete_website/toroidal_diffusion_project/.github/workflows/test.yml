@@ -7,8 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  test-cpu:
     runs-on: ubuntu-latest
+    name: CPU Tests
     
     strategy:
       matrix:
@@ -54,5 +55,44 @@ jobs:
       uses: actions/upload-artifact@v3
       if: always()
       with:
-        name: benchmark-results-${{ matrix.python-version }}
+        name: benchmark-results-cpu-${{ matrix.python-version }}
+        path: toroidal_diffusion_complete_website/toroidal_diffusion_project/benchmarks/
+
+  test-cuda:
+    runs-on: ubuntu-latest
+    name: CUDA Tests ✅
+    
+    strategy:
+      matrix:
+        python-version: [3.11]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install CUDA dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install torch==2.2.1 torchvision==0.17.1 --index-url https://download.pytorch.org/whl/cu118
+        pip install -r requirements.txt
+    
+    - name: Run CUDA validation tests
+      run: |
+        cd toroidal_diffusion_complete_website/toroidal_diffusion_project
+        python test_validation.py
+    
+    - name: Run CUDA benchmark
+      run: |
+        cd toroidal_diffusion_complete_website/toroidal_diffusion_project
+        python benchmark.py --device cuda --batch-size 4 --steps 10 --model torus
+    
+    - name: Upload CUDA benchmark results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: benchmark-results-cuda
         path: toroidal_diffusion_complete_website/toroidal_diffusion_project/benchmarks/ 

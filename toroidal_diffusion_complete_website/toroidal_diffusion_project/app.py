@@ -31,6 +31,14 @@ class TORUSApp:
         base_model = SimpleUNet(in_channels=3, out_channels=3)
         scheduler = SimpleScheduler()
         
+        # Load demo checkpoint if available
+        checkpoint_path = "weights/demo_ckpt.pt"
+        if os.path.exists(checkpoint_path):
+            print(f"Loading checkpoint from {checkpoint_path}")
+            checkpoint = torch.load(checkpoint_path, map_location=self.device)
+            base_model.load_state_dict(checkpoint['model_state_dict'])
+            print("Checkpoint loaded successfully")
+        
         # Create TORUS model
         self.model = ToroidalDiffusionModel(
             base_model=base_model,
