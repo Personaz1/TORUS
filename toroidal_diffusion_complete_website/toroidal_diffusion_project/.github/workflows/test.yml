@@ -1,4 +1,4 @@
-name: TORUS Tests
+name: TORUS CI
 
 on:
   push:
