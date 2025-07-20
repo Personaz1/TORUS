@@ -1,7 +1,7 @@
 # TORUS: Toroidal Diffusion Model
 
 [![CI](https://github.com/Personaz1/TORUS/actions/workflows/test.yml/badge.svg)](https://github.com/Personaz1/TORUS/actions/workflows/test.yml)
-[![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-blue)](https://huggingface.co/spaces/Personaz1/TORUS)
+[![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-blue)](https://huggingface.co/spaces/stephansolncev/TORUS)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
@@ -29,7 +29,10 @@ TORUS represents a breakthrough in generative AI, implementing the first complet
 
 ## 🚀 Quick Start
 
-### Installation
+### Option 1: Hugging Face Space (Recommended)
+Visit our live demo: **[🤗 TORUS Space](https://huggingface.co/spaces/stephansolncev/TORUS)**
+
+### Option 2: Local Installation
 
 ```bash
 git clone https://github.com/Personaz1/TORUS.git
