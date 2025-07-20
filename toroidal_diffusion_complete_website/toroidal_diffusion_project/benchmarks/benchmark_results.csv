@@ -1,0 +1,3 @@
+model_name,batch_size,num_steps,device,forward_time,sampling_time,throughput,samples_per_sec,total_params,trainable_params,memory_allocated_gb,memory_reserved_gb,timestamp,torch_version,cuda_version
+TORUS,4,10,cpu,0.16848015785217285,1.3549728393554688,23.74166816432866,2.952088694193098,7793373,7793373,0,0,2025-07-21T00:51:39.226443,2.6.0,N/A
+Baseline,4,10,cpu,0.11527299880981445,1.1820409297943115,34.70023371734679,3.383977575713935,7788885,7788885,0,0,2025-07-21T00:51:40.637861,2.6.0,N/A
