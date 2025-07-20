@@ -1,0 +1,75 @@
+DEF Architecture Performance Benchmark Results
+==================================================
+
+Test: Core_Diffusion_32x64
+  Execution Time: 1.092s
+  Memory Usage: 5.1MB
+  GPU Memory: 0.0MB
+  Throughput: 45.79 ops/s
+  Convergence Steps: 45
+  Final Coherence: 0.001112
+  Geometric Stability: 0.999736
+------------------------------
+Test: Enhanced_Wrapper_SBERT_False
+  Execution Time: 1.245s
+  Memory Usage: 2.3MB
+  GPU Memory: 0.0MB
+  Throughput: 40.17 ops/s
+  Convergence Steps: 50
+  Final Coherence: 0.000379
+  Geometric Stability: 0.000081
+------------------------------
+Test: Enhanced_Wrapper_SBERT_True
+  Execution Time: 1.257s
+  Memory Usage: 0.0MB
+  GPU Memory: 0.0MB
+  Throughput: 39.78 ops/s
+  Convergence Steps: 50
+  Final Coherence: 0.000005
+  Geometric Stability: 0.000103
+------------------------------
+Test: Sampling_Performance
+  Execution Time: 6.284s
+  Memory Usage: 57.3MB
+  GPU Memory: 0.0MB
+  Throughput: 0.64 ops/s
+  Convergence Steps: 4
+  Final Coherence: 0.000000
+  Geometric Stability: 0.000381
+------------------------------
+Test: Core_Diffusion_16x32
+  Execution Time: 1.993s
+  Memory Usage: 3.4MB
+  GPU Memory: 0.0MB
+  Throughput: 25.08 ops/s
+  Convergence Steps: 47
+  Final Coherence: 0.000060
+  Geometric Stability: 0.999612
+------------------------------
+Test: Core_Diffusion_32x64
+  Execution Time: 1.385s
+  Memory Usage: 0.0MB
+  GPU Memory: 0.0MB
+  Throughput: 36.11 ops/s
+  Convergence Steps: 50
+  Final Coherence: 0.001852
+  Geometric Stability: 0.999730
+------------------------------
+Test: Core_Diffusion_64x128
+  Execution Time: 1.271s
+  Memory Usage: 15.8MB
+  GPU Memory: 0.0MB
+  Throughput: 39.34 ops/s
+  Convergence Steps: 50
+  Final Coherence: 0.002986
+  Geometric Stability: 0.999760
+------------------------------
+Test: Core_Diffusion_128x256
+  Execution Time: 1.490s
+  Memory Usage: 123.0MB
+  GPU Memory: 0.0MB
+  Throughput: 33.55 ops/s
+  Convergence Steps: 50
+  Final Coherence: 0.000499
+  Geometric Stability: 0.999760
+------------------------------
