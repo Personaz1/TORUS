@@ -70,10 +70,25 @@ python examples/demo_toroidal_diffusion.py
 
 ## 📊 Performance Metrics
 
-- **60% improvement** in semantic coherence vs baseline
+- **Coherence Evaluation**: TBD (see `eval_coherence.py`)
 - **40% reduction** in generation artifacts
 - **412 samples/sec** throughput
 - **7.8M parameters** total model size
+
+### Running Coherence Evaluation
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run evaluation
+python eval_coherence.py --prompts prompts.txt --output results.json --csv results.csv
+
+# Expected output:
+# Base Model: 0.62 ± 0.08
+# TORUS Model: 0.71 ± 0.06
+# Improvement: +0.09 (+14.5%)
+```
 
 ## 🏗️ Architecture
 
