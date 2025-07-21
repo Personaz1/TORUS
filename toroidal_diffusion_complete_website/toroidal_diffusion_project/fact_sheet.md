@@ -2,7 +2,7 @@
 
 ## Paper Information
 - **Title**: TORUS: Toroidal Diffusion Model with Central Singularity Processing
-- **Authors**: Stepan Egoshin, ΔΣ-Foundation
+- **Authors**: Stepan Solncev, ΔΣ-Foundation
 - **GitHub**: https://github.com/Personaz1/TORUS
 - **Hugging Face Space**: https://huggingface.co/spaces/Personaz1/TORUS
 - **Docker Image**: ghcr.io/personaz1/torus:latest
@@ -75,10 +75,10 @@ docker run -p 3000:3000 ghcr.io/personaz1/torus:latest
 
 ## Citation
 ```bibtex
-@misc{egoshin2024torus,
+@misc{egoshin2025torus,
   title={TORUS: Toroidal Diffusion Model with Central Singularity Processing},
-  author={Stepan Egoshin and ΔΣ-Foundation},
-  year={2024},
+  author={Stepan Solncev and ΔΣ-Foundation},
+  year={2025},
   url={https://github.com/Personaz1/TORUS}
 }
 ```

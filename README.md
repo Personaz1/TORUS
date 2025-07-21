@@ -133,7 +133,7 @@ This project is licensed under the MIT License - see the [LICENSE](toroidal_diff
 
 ## 👥 Authors
 
-- **Stepan Egoshin** - [@Personaz1](https://github.com/Personaz1)
+- **Stepan Solncev** - [@Personaz1](https://github.com/Personaz1)
 - **ΔΣ-Foundation**
 
 ## 📞 Contact
@@ -147,10 +147,10 @@ This project is licensed under the MIT License - see the [LICENSE](toroidal_diff
 If you use TORUS in your research, please cite:
 
 ```bibtex
-@misc{egoshin2024torus,
+@misc{egoshin2025torus,
   title={TORUS: Toroidal Diffusion Model with Central Singularity Processing},
-  author={Stepan Egoshin and ΔΣ-Foundation},
-  year={2024},
+  author={Stepan Solncev and ΔΣ-Foundation},
+  year={2025},
   url={https://github.com/Personaz1/TORUS}
 }
 ```

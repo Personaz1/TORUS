@@ -192,7 +192,7 @@ Potential extensions:
 
 ## 📞 Support & Contact
 
-- **Author**: Stepan Egoshin (stephansolncev@gmail.com)
+- **Author**: Stepan Solncev (stephansolncev@gmail.com)
 - **Telegram**: @personaz1
 - **Organization**: ΔΣ-Foundation
 

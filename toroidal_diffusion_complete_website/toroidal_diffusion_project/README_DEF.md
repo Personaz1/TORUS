@@ -14,7 +14,7 @@ This is the enhanced version of the Toroidal Diffusion Model featuring the revol
 - **Real-time geometric analysis** and flow statistics
 - **Interactive web interface** with advanced visualizations
 
-**Author:** Stepan Egoshin (ΔΣ-Foundation)  
+**Author:** Stepan Solncev (ΔΣ-Foundation)  
 **Contact:** stephansolncev@gmail.com  
 **Telegram:** @personaz1  
 **License:** MIT

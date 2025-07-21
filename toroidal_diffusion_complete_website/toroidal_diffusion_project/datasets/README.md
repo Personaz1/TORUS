@@ -76,10 +76,10 @@ datasets/
 When using these datasets, please cite:
 
 ```bibtex
-@misc{egoshin2024torus,
+@misc{egoshin2025torus,
   title={TORUS: Toroidal Diffusion Model with Central Singularity Processing},
-  author={Stepan Egoshin and ΔΣ-Foundation},
-  year={2024},
+  author={Stepan Solncev and ΔΣ-Foundation},
+  year={2025},
   url={https://github.com/Personaz1/TORUS}
 }
 ``` 

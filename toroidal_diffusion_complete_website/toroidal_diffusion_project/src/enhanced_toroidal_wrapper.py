@@ -12,7 +12,7 @@ Features:
 - Integration with Hugging Face Diffusers
 - Real-time geometric analysis and flow statistics
 
-Author: Stepan Egoshin (ΔΣ-Foundation)
+Author: Stepan Solncev (ΔΣ-Foundation)
 License: MIT
 """
 

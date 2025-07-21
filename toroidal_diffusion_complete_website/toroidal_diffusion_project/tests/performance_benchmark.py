@@ -5,7 +5,7 @@ Performance Benchmark Suite for DEF Toroidal Architecture
 Comprehensive performance testing and optimization analysis
 for the enhanced DEF (Diffusion-Embedding-Flow) architecture.
 
-Author: Stepan Egoshin (ΔΣ-Foundation)
+Author: Stepan Solncev (ΔΣ-Foundation)
 """
 
 import sys

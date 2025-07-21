@@ -266,7 +266,7 @@ This project is released under the MIT License. See LICENSE file for details.
 
 ## 📞 Contact
 
-- **Author**: Stepan Egoshin
+- **Author**: Stepan Solncev
 - **Email**: stephansolncev@gmail.com
 - **Telegram**: @personaz1
 - **Organization**: ΔΣ-Foundation

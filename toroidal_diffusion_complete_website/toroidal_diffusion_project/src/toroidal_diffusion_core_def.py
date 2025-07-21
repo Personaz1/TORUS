@@ -6,7 +6,7 @@ Toroidal Diffusion Core — full DEF prototype (geometry + learnable + SBERT + J
 • E – real semantic embeddings via Sentence-Transformer (optional fall-back)
 • F – single-jet decoder head for text tokens
 
-Author: Stepan Egoshin (ΔΣ-Foundation) + Enhanced Implementation 2025-07-14
+Author: Stepan Solncev (ΔΣ-Foundation) + Enhanced Implementation 2025-07-14
 License: MIT (prototype)
 
 Instructions
