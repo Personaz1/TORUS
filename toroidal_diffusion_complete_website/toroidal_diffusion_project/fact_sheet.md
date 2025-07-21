@@ -75,7 +75,7 @@ docker run -p 3000:3000 ghcr.io/personaz1/torus:latest
 
 ## Citation
 ```bibtex
-@misc{egoshin2025torus,
+@misc{solncev2025torus,
   title={TORUS: Toroidal Diffusion Model with Central Singularity Processing},
   author={Stepan Solncev and ΔΣ-Foundation},
   year={2025},
