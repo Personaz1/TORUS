@@ -79,4 +79,4 @@ curl -s https://huggingface.co/spaces/stephansolncev/TORUS
 ### Проблемы с доступом
 - Использовать SSH ключи для HF
 - Проверить права доступа к Space
-- Убедиться в правильности remote URL 
+- Убедиться в правильности remote URL ✅ HF Space README.md updated with proper YAML config
