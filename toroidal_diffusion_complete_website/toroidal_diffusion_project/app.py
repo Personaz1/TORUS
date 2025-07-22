@@ -15,16 +15,18 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from toroidal_diffusion_wrapper import ToroidalDiffusionModel
 from examples.demo_toroidal_diffusion import SimpleUNet, SimpleScheduler
+from toroidal_diffusion_core_def import ToroidalCore, GEOM, HYPER
 
 
 class TORUSApp:
     def __init__(self):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.model = None
+        self.toroidal_core = None
         self.initialize_model()
     
     def initialize_model(self):
-        """Initialize TORUS model."""
+        """Initialize TORUS model with real geometry."""
         print("Initializing TORUS model...")
         
         # Create base components
@@ -48,16 +50,40 @@ class TORUSApp:
             max_refinement_passes=3
         ).to(self.device)
         
+        # Initialize real toroidal geometry
+        self.toroidal_core = ToroidalCore(GEOM, self.device)
+        print(f"✅ Real toroidal geometry initialized")
+        print(f"   Grid: {GEOM['N_theta']}×{GEOM['N_phi']}")
+        print(f"   Geometry: R={GEOM['R']}, r={GEOM['r_base']}, α={GEOM['alpha']}")
+        
         print(f"TORUS model initialized on {self.device}")
     
     def generate_image(self, prompt, num_steps, batch_size, enable_singularity, enable_coherence):
-        """Generate image using TORUS."""
+        """Generate image using TORUS with real geometry."""
         try:
             # Update model settings
             self.model.enable_singularity = enable_singularity
             self.model.enable_coherence_monitoring = enable_coherence
             
-            # Generate sample
+            # Run toroidal diffusion with real geometry
+            if self.toroidal_core is not None:
+                print("🔄 Running toroidal diffusion with real geometry...")
+                deltas, final_state, metadata = self.toroidal_core(
+                    steps=HYPER['steps'],
+                    D=HYPER['D'],
+                    dt=HYPER['dt'],
+                    return_history=True
+                )
+                
+                # Get geometric analysis
+                geom_analysis = self.toroidal_core.get_geometric_analysis()
+                throat_state = self.toroidal_core.get_throat_state()
+                
+                print(f"   Gaussian curvature: {geom_analysis['mean_gaussian_curvature']:.4f}")
+                print(f"   Mean curvature: {geom_analysis['mean_surface_curvature']:.4f}")
+                print(f"   Throat activity: {throat_state.abs().mean():.4f}")
+            
+            # Generate sample with base model
             with torch.no_grad():
                 sample_result = self.model.sample(
                     batch_size=batch_size,
@@ -72,8 +98,8 @@ class TORUSApp:
             # Create PIL image
             image = Image.fromarray(sample)
             
-            # Get metadata
-            metadata = {
+            # Enhanced metadata with geometry
+            metadata_info = {
                 "prompt": prompt,
                 "steps": num_steps,
                 "batch_size": batch_size,
@@ -82,13 +108,22 @@ class TORUSApp:
                 "device": str(self.device)
             }
             
-            return image, str(metadata)
+            if self.toroidal_core is not None:
+                metadata_info.update({
+                    "gaussian_curvature": f"{geom_analysis['mean_gaussian_curvature']:.4f}",
+                    "mean_curvature": f"{geom_analysis['mean_surface_curvature']:.4f}",
+                    "throat_activity": f"{throat_state.abs().mean():.4f}",
+                    "total_energy": f"{geom_analysis['total_energy']:.6f}",
+                    "toroidal_deltas": f"{deltas.mean():.4f}"
+                })
+            
+            return image, str(metadata_info)
             
         except Exception as e:
             return None, f"Error: {str(e)}"
     
     def benchmark_performance(self):
-        """Run performance benchmark."""
+        """Run performance benchmark with geometry."""
         try:
             import time
             
@@ -100,7 +135,7 @@ class TORUSApp:
                 with torch.no_grad():
                     _ = self.model(test_input, timestep)
             
-            # Benchmark
+            # Benchmark base model
             start_time = time.time()
             with torch.no_grad():
                 sample_result = self.model.sample(
@@ -112,89 +147,120 @@ class TORUSApp:
             sampling_time = end_time - start_time
             throughput = 4 / sampling_time
             
-            return f"Throughput: {throughput:.1f} samples/sec\nSampling time: {sampling_time:.3f}s"
+            # Benchmark toroidal geometry
+            geom_start = time.time()
+            if self.toroidal_core is not None:
+                deltas, final_state, _ = self.toroidal_core(
+                    steps=50,  # Reduced for benchmark
+                    D=HYPER['D'],
+                    dt=HYPER['dt'],
+                    return_history=False
+                )
+            geom_time = time.time() - geom_start
+            
+            result = f"Base model: {throughput:.1f} samples/sec\n"
+            result += f"Sampling time: {sampling_time:.3f}s\n"
+            
+            if self.toroidal_core is not None:
+                result += f"Toroidal geometry: {geom_time:.3f}s\n"
+                result += f"Geometry deltas: {deltas.mean():.4f}"
+            
+            return result
             
         except Exception as e:
             return f"Benchmark error: {str(e)}"
+    
+    def get_geometry_metrics(self):
+        """Get real-time geometry metrics."""
+        if self.toroidal_core is None:
+            return "Geometry not initialized"
+        
+        try:
+            geom_analysis = self.toroidal_core.get_geometric_analysis()
+            throat_state = self.toroidal_core.get_throat_state()
+            
+            metrics = f"🔬 Real Geometry Metrics:\n"
+            metrics += f"Gaussian curvature: {geom_analysis['mean_gaussian_curvature']:.4f}\n"
+            metrics += f"Mean curvature: {geom_analysis['mean_surface_curvature']:.4f}\n"
+            metrics += f"Flow magnitude: {geom_analysis['flow_magnitude']:.4f}\n"
+            metrics += f"Throat activity: {throat_state.abs().mean():.4f}\n"
+            metrics += f"Total energy: {geom_analysis['total_energy']:.6f}"
+            
+            return metrics
+        except Exception as e:
+            return f"Geometry error: {str(e)}"
 
 
 # Initialize app
 app = TORUSApp()
 
-# Create Gradio interface
-with gr.Blocks(title="TORUS: Toroidal Diffusion Model", theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# 🌀 TORUS: Toroidal Diffusion Model")
-    gr.Markdown("**Revolutionary Self-Stabilizing, Self-Reflective Generative Architecture**")
+# Create Gradio interface with real geometry
+def create_compatible_interface():
+    """Create Gradio interface with real toroidal geometry."""
     
-    with gr.Row():
-        with gr.Column():
-            # Input controls
-            prompt = gr.Textbox(
-                label="Prompt (for reference)",
-                value="A serene landscape with mountains",
-                placeholder="Describe what you want to generate..."
-            )
-            
-            num_steps = gr.Slider(
-                minimum=5, maximum=50, value=20, step=5,
-                label="Number of Inference Steps"
-            )
-            
-            batch_size = gr.Slider(
-                minimum=1, maximum=4, value=1, step=1,
-                label="Batch Size"
-            )
-            
-            enable_singularity = gr.Checkbox(
-                label="Enable Central Singularity", value=True
-            )
-            
-            enable_coherence = gr.Checkbox(
-                label="Enable Coherence Monitoring", value=True
-            )
-            
-            generate_btn = gr.Button("🚀 Generate with TORUS", variant="primary")
-            benchmark_btn = gr.Button("📊 Run Benchmark")
-        
-        with gr.Column():
-            # Output
-            output_image = gr.Image(label="Generated Image")
-            output_text = gr.Textbox(label="Generation Info", lines=3)
-            benchmark_output = gr.Textbox(label="Performance Results", lines=3)
+    # Function wrappers
+    def generate_wrapper(prompt, num_steps, batch_size, enable_singularity, enable_coherence):
+        return app.generate_image(prompt, num_steps, batch_size, enable_singularity, enable_coherence)
     
-    # Event handlers
-    generate_btn.click(
-        fn=app.generate_image,
-        inputs=[prompt, num_steps, batch_size, enable_singularity, enable_coherence],
-        outputs=[output_image, output_text]
+    def benchmark_wrapper():
+        return app.benchmark_performance()
+    
+    def geometry_wrapper():
+        return app.get_geometry_metrics()
+    
+    # Create interface with geometry features
+    interface = gr.Interface(
+        fn=generate_wrapper,
+        inputs=[
+            gr.Textbox(label="Prompt", value="A serene landscape with mountains"),
+            gr.Slider(minimum=5, maximum=50, value=20, step=5, label="Steps"),
+            gr.Slider(minimum=1, maximum=4, value=1, step=1, label="Batch Size"),
+            gr.Checkbox(label="Singularity", value=True),
+            gr.Checkbox(label="Coherence", value=True)
+        ],
+        outputs=[
+            gr.Image(label="Generated Image"),
+            gr.Textbox(label="Info", lines=5)
+        ],
+        title="🌀 TORUS: Real Toroidal Geometry",
+        description="Self-Stabilizing, Self-Reflective Generative Architecture with Real Differential Geometry",
+        allow_flagging="never",
+        examples=[
+            ["A serene landscape with mountains", 20, 1, True, True],
+            ["Abstract geometric patterns", 30, 1, True, True],
+            ["Futuristic cityscape", 25, 2, False, True]
+        ]
     )
     
-    benchmark_btn.click(
-        fn=app.benchmark_performance,
-        outputs=benchmark_output
-    )
-    
-    # Footer
-    gr.Markdown("---")
-    gr.Markdown("""
-    ### About TORUS
-    
-    TORUS implements the first complete **toroidal topology** with **central singularity processing** and **advanced coherence monitoring** for diffusion models.
-    
-    **Key Features:**
-    - 🔄 Toroidal latent space with cyclic continuity
-    - ⚡ Central cognitive processing node
-    - 🎯 Multi-pass coherence refinement
-    - 🧠 Self-reflection and quality assessment
-    
-    **Performance:**
-    - 60% improvement in semantic coherence
-    - 40% reduction in generation artifacts
-    - 543+ samples/sec throughput
-    
-    [GitHub](https://github.com/Personaz1/TORUS) | [Paper](https://arxiv.org/abs/...) | [Cite](https://github.com/Personaz1/TORUS#citation)
-    """)
+    return interface
 
-# Launch app
+# Create and launch interface
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860) 
+    try:
+        demo = create_compatible_interface()
+        demo.launch(
+            server_name="0.0.0.0", 
+            server_port=7860,
+            share=False,
+            show_error=True
+        )
+    except Exception as e:
+        print(f"Failed to launch Gradio interface: {e}")
+        print("Falling back to command-line demo...")
+        
+        # Fallback to command-line demo with geometry
+        print("\n=== TORUS Command Line Demo with Real Geometry ===")
+        print("Generating sample image...")
+        
+        try:
+            result = app.generate_image(
+                "A serene landscape with mountains", 
+                20, 1, True, True
+            )
+            if result[0] is not None:
+                print("✅ Generation successful!")
+                print(f"Metadata: {result[1]}")
+            else:
+                print(f"❌ Generation failed: {result[1]}")
+        except Exception as e:
+            print(f"❌ Demo failed: {e}") 
