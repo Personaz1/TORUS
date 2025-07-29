@@ -1,5 +1,9 @@
 # TORUS: Toroidal Diffusion Model
 
+> ⚠️ This repository explores **Toroidal Architectures for AI**, a class of models where the computation or information flow is embedded in **closed-loop topologies** (e.g., torus, Möbius space, hypersphere).
+
+> 💡 Key themes: Toroidal Attention, Topological Memory, Wrap-Around Embeddings, Zero-Singularity Points.
+
 [![CI](https://github.com/Personaz1/TORUS/actions/workflows/test.yml/badge.svg)](https://github.com/Personaz1/TORUS/actions/workflows/test.yml)
 [![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-blue)](https://huggingface.co/spaces/stephansolncev/TORUS)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -172,4 +176,6 @@ If you use TORUS in your research, please cite:
 
 ---
 
-**TORUS: Where Topology Meets Cognition in Generative AI** 🌀🧠 
+**TORUS: Where Topology Meets Cognition in Generative AI** 🌀🧠
+
+<!-- tags: toroidal-architecture, AGI, attention-loops, topological-ai, hyperstructures, torus-networks, ΔΣ, consciousness-models, toroidal-embeddings, toroidal-neural-networks, toroidal-topology, toroidal-attention, diffusion-on-torus, architectural-topology, self-reflective-LLM --> 

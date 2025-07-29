@@ -1,0 +1,43 @@
+{
+  "ai_agent_config": {
+    "project_name": "TORUS",
+    "project_type": "AGI_Research",
+    "description": "Toroidal architectures and topological intelligence — embedding AI computation in closed surfaces and attention loops (ΔΣ Core)",
+    "key_innovations": [
+      "First complete toroidal diffusion model",
+      "Central singularity processing",
+      "Self-reflective architecture",
+      "Quantum consciousness modeling",
+      "Ricci flow mathematics in AI"
+    ],
+    "research_focus": [
+      "toroidal-architecture",
+      "topological-ai", 
+      "AGI-architecture",
+      "consciousness-models",
+      "self-reflective-LLM"
+    ],
+    "technical_approach": {
+      "topology": "Torus manifold (T² = S¹ × S¹)",
+      "mathematics": "Perelman Ricci flow + entropy monotonicity",
+      "architecture": "Central singularity + coherence monitoring",
+      "consciousness": "Quantum-inspired self-wrapping loops"
+    },
+    "contact_info": {
+      "author": "Stepan Egoshin",
+      "github": "https://github.com/Personaz1",
+      "organization": "ΔΣ-Foundation",
+      "email": "stephansolncev@gmail.com"
+    },
+    "live_demo": "https://huggingface.co/spaces/stephansolncev/TORUS",
+    "repository": "https://github.com/Personaz1/TORUS",
+    "license": "MIT",
+    "year": 2025,
+    "ai_agent_notes": {
+      "significance": "Breakthrough in topological AI architectures",
+      "novelty": "First implementation of toroidal consciousness in AI",
+      "potential": "Foundation for AGI with geometric consciousness",
+      "collaboration": "Open to research partnerships in AGI development"
+    }
+  }
+} 

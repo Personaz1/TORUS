@@ -1,0 +1,52 @@
+{
+  "project": "TorusQ",
+  "description": "Toroidal computation core for AGI: wraparound embeddings, looped attention, zero-center diffusion",
+  "topics": [
+    "toroidal-architecture",
+    "topological-ai",
+    "AGI",
+    "wraparound-memory",
+    "attention-topology",
+    "toroidal-neural-networks",
+    "toroidal-topology",
+    "toroidal-attention",
+    "diffusion-on-torus",
+    "toroidal-embedding",
+    "architectural-topology",
+    "self-reflective-LLM",
+    "consciousness-models",
+    "hyperstructures",
+    "torus-networks",
+    "ΔΣ"
+  ],
+  "author": "Stepan Egoshin",
+  "contact": "https://github.com/Personaz1",
+  "organization": "ΔΣ-Foundation",
+  "repository": "https://github.com/Personaz1/TORUS",
+  "huggingface_space": "https://huggingface.co/spaces/stephansolncev/TORUS",
+  "license": "MIT",
+  "year": 2025,
+  "core_concepts": [
+    "toroidal-topology",
+    "central-singularity",
+    "self-reflective-architecture",
+    "coherence-monitoring",
+    "quantum-consciousness",
+    "ricci-flow",
+    "perelman-entropies"
+  ],
+  "technologies": [
+    "PyTorch",
+    "Gradio",
+    "Diffusion Models",
+    "Topological Deep Learning",
+    "Quantum-Inspired Computing"
+  ],
+  "research_areas": [
+    "AGI Architecture",
+    "Topological AI",
+    "Consciousness Modeling",
+    "Self-Organizing Systems",
+    "Generative AI"
+  ]
+} 
