@@ -1,0 +1,3 @@
+# Agent instructions
+
+Research project. Start from the canonical problem statement and identify which code, demo and paper are current. Do not assume nested prototypes are equivalent. Any claimed advantage must be tested against strong baselines with controlled seeds, ablations, metrics and reproducible datasets. Preserve null results. Do not label the system AGI or a validated intelligence architecture without evidence.
