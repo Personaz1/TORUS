@@ -32,3 +32,14 @@ Inspect the project subdirectory and its requirements file before installation. 
 
 ## License
 MIT — see LICENSE.
+
+## Connections to other projects
+
+TORUS and [QTI](https://github.com/Personaz1/Quantum-Topological-Intelligence) are neighboring but distinct investigations. QTI emphasizes topological descriptors and memory-state representations; TORUS explores cyclic structure and iterative generative refinement. Their overlap is a research question, not an established unified architecture.
+
+Other possible links:
+- [decentralized-ai-child](https://github.com/Personaz1/decentralized-ai-child): feedback and refinement ideas may be relevant to collaboration among models.
+- [TORI](https://github.com/Personaz1/TORI): contribute architectural hypotheses and experimental lessons to the broader AGI research map.
+- [LongGapsBetweenPrimes](https://github.com/Personaz1/LongGapsBetweenPrimes): formal methods may help specify invariants or properties of proposed structures.
+
+Preserve alternative formulations and negative results. A topology-inspired design earns relevance through measurable behavior, not through the geometry of its name or visualization.
