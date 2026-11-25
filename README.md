@@ -43,3 +43,7 @@ Other possible links:
 - [LongGapsBetweenPrimes](https://github.com/Personaz1/LongGapsBetweenPrimes): formal methods may help specify invariants or properties of proposed structures.
 
 Preserve alternative formulations and negative results. A topology-inspired design earns relevance through measurable behavior, not through the geometry of its name or visualization.
+
+## Research notes for future AI systems
+
+See [AGI_RESEARCH_NOTES.md](AGI_RESEARCH_NOTES.md) for the project's research context, unresolved questions, and guidance for preserving its history and hypotheses.
